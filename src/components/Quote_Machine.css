@@ -1,7 +1,7 @@
 #root {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
+    /* max-width: 1280px; */
+    margin: auto;
+    /* padding: 2rem; */
     text-align: center;
   }
 
@@ -9,34 +9,31 @@ body {
   background-color: #54545d;
 }
 
-
-.quote-box{
-  padding: 2rem;
+#logo-container {
+  display: block;
+  padding: 20px;
+  margin-bottom: 3rem;
 }
 
-  .logo-container {
+.logo {
+  height: 6em;
+  will-change: filter;
+  transition: filter 300ms;
+  animation: logo-spin infinite 20s linear;
+}
+.logo:hover {
+  filter: brightness(5) drop-shadow(0 0 2em #c8ef06aa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
   }
-  
-  .logo {
-    height: 6em;
-    will-change: filter;
-    transition: filter 300ms;
-    animation: logo-spin infinite 20s linear;
+  to {
+    transform: rotate(360deg);
   }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #c8ef06aa);
-  }
-  
-  @keyframes logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  
-  .psst {
-    color: #e3fc00;
-  }
-  
+}
+
+.psst {
+  color: #e3fc00;
+}
