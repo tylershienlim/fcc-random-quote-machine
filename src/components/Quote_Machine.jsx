@@ -1,34 +1,37 @@
-import reactLogo from '../assets/react.svg'
-import viteLogo from '/vite.svg'
+import batmanLogo from '../assets/batman.svg'
 import './Quote_Machine.css'
+import batmanQuotes from '..//data/quotes.json'
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 function Quote_Machine() {
-  
+  const jsonQuotes = JSON.parse(JSON.stringify(batmanQuotes))
+  const selectedQuote = jsonQuotes[0].quote
+  const selectedCharacter = jsonQuotes[0].character
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+      <div id="logo-container">
+        <a>
+          <img src={batmanLogo} className="logo" alt="Batman logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
       <div id="quote-box">
-        <h2 id="text">Text</h2>
-        <p id="author">Author</p>
-        <a id="new-quote">New Quote</a>
-        <a id="tweet-quote" target='_blank' href='"twitter.com/intent/tweet"'>Tweet Quote</a>
+        <h2 id="text">{selectedQuote}</h2>
+        <h3 id="author">{selectedCharacter}</h3>
+        <button id="new-quote" class="button bi bi-arrow-clockwise">
+        </button>
+        <button class="button bi bi-twitter-x">
+          <a id="tweet-quote" target='_blank' href="twitter.com/intent/tweet">
+          </a>
+        </button>
       </div>
-      <div className="card">
+      <div>
         <p>
           By <code>@tylershienlim</code>
         </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+      <p className="psst">
+        Psst... Hover over the batman logo to see it light up!
       </p>
     </>
   )
